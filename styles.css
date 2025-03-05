@@ -222,82 +222,80 @@ section:last-of-type {
 
 /* Section intro with clean styling */
 .section-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: var(--text-color);
   font-size: 1.1rem;
-  margin-bottom: 1.8rem;
-  max-width: 700px;
-  color: var(--text-secondary);
-  font-style: italic;
   line-height: 1.6;
 }
 
-.subsection-title {
-  font-size: 1.4rem;
-  color: var(--primary-color);
-  margin-bottom: 1.2rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--subtle-border);
+/* New section header layout */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.section-header .section-title {
+  margin-bottom: 0;
+}
+
+.section-links {
+  text-align: right;
   font-family: var(--font-serif);
+  margin-bottom: 5px;
 }
 
-/* Home section with clean styling */
-.home {
-  min-height: calc(60vh - var(--header-height));
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 0.8rem; /* Reduced from 2rem to create less space */
-}
-
-.home-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.7rem;
-  color: var(--primary-color);
-  letter-spacing: 0.02em;
-}
-
-/* Work section specific spacing */
-#work {
-  padding-top: 0.5rem; /* Override section padding for the work section only */
-}
-
-/* Clean social handles styling */
-.social-handles {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.2rem;
-  font-family: var(--font-sans);
-  font-size: 1rem;
-}
-
-.social-handles a {
+.academic-link,
+.academic-link:link,
+.academic-link:visited {
   color: var(--primary-color);
   text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.social-handles a:hover {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
-
-.handle-separator {
-  color: var(--text-secondary);
-}
-
-/* Bio section with elegant box styling */
-.home-bio {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 3px;
+  background-color: transparent;
   font-family: var(--font-serif);
-  background-color: rgba(255,255,255,0.7);
-  padding: 1rem 1.5rem;
-  border: 1px solid var(--subtle-border);
-  border-left: 3px solid var(--primary-color);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.cv-text {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-family: var(--font-serif);
+  transition: all 0.3s ease;
+}
+
+.academic-link:hover {
+  color: var(--primary-color);
+  background-color: rgba(0, 33, 71, 0.05);
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.academic-link:active {
+  color: var(--primary-color);
+  background-color: rgba(0, 33, 71, 0.08);
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.academic-link:focus {
+  outline: none;
+}
+
+.academic-link:focus-visible {
+  outline: 2px solid var(--oxford-blue-light);
+  outline-offset: 2px;
+}
+
+.academic-link::after {
+  display: none;
 }
 
 /* Work section - Simple links */
@@ -945,4 +943,181 @@ article table caption::before {
 .equation-number {
   float: right;
   font-size: 0.9rem;
+}
+
+/* Work experience section */
+.work-experience {
+  margin-top: 1rem;
+}
+
+.experience-item {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.experience-item h3 {
+  margin-bottom: 0.25rem;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Remove the decorative line that was added */
+.experience-item h3::after {
+  display: none;
+}
+
+/* Company names in work experience section */
+.company-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.experience-meta {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--gray-medium);
+  margin-bottom: 1rem;
+}
+
+.experience-item p {
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.experience-item p:hover .highlight {
+  color: var(--accent-color);
+}
+
+.experience-highlights {
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-highlights li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Company logo in work experience section */
+.company-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.75rem;
+  margin-right: 0;
+  vertical-align: middle;
+}
+
+.company-logo-img {
+  width: 24px;
+  height: auto;
+  object-fit: contain;
+  vertical-align: middle;
+  background: transparent;
+}
+
+.experience-item h3 {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.experience-date {
+  font-weight: normal;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-left: 0.75rem;
+}
+
+.subsection-title {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--subtle-border);
+  font-family: var(--font-serif);
+}
+
+/* Home section with clean styling */
+.home {
+  min-height: calc(60vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 0.8rem; /* Reduced from 2rem to create less space */
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.7rem;
+  color: var(--primary-color);
+  letter-spacing: 0.02em;
+}
+
+/* Work section specific spacing */
+#work {
+  padding-top: 0.5rem; /* Override section padding for the work section only */
+}
+
+/* Clean social handles styling */
+.social-handles {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+}
+
+.social-handles a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social-handles a:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.handle-separator {
+  color: var(--text-secondary);
+}
+
+/* Bio section with elegant box styling */
+.home-bio {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-family: var(--font-serif);
+  background-color: rgba(255,255,255,0.7);
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--subtle-border);
+  border-left: 3px solid var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
 } 
