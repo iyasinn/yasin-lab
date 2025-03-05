@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCopyrightYear();
   generateTableOfContents();
   setupCodeHighlighting();
+  
+  // Render dynamic components
+  renderExperiences();
+  renderProjects();
+  renderPublications();
+  renderPapers();
+  renderBlogs();
+  renderSocialLinks('social-links');
+  renderSocialLinks('footer-social-links', true);
 });
 
 /**
@@ -174,4 +183,189 @@ function throttle(func, limit) {
       setTimeout(() => inThrottle = false, limit);
     }
   }
+}
+
+/**
+ * COMPONENT RENDERING FUNCTIONS
+ * The following functions handle dynamic content rendering
+ */
+
+/**
+ * Render experience items from the data source
+ */
+function renderExperiences() {
+  const container = document.getElementById('work-experience');
+  if (!container) return;
+  
+  const template = document.getElementById('experience-template');
+  if (!template) return;
+  
+  experiences.forEach(exp => {
+    const clone = document.importNode(template.content, true);
+    
+    const companyElement = clone.querySelector('.company-name');
+    companyElement.textContent = exp.company;
+    
+    // Add logo if available
+    if (exp.logo) {
+      const logoSpan = document.createElement('span');
+      logoSpan.className = 'company-logo';
+      
+      const logoImg = document.createElement('img');
+      logoImg.src = exp.logo;
+      logoImg.alt = exp.logoAlt || `${exp.company} Logo`;
+      logoImg.className = 'company-logo-img';
+      logoImg.loading = 'lazy'; // Add lazy loading for better performance
+      
+      logoSpan.appendChild(logoImg);
+      companyElement.appendChild(logoSpan);
+    }
+    
+    clone.querySelector('.position').textContent = exp.position;
+    clone.querySelector('.experience-date').textContent = exp.date;
+    clone.querySelector('.description').innerHTML = exp.description;
+    
+    container.appendChild(clone);
+  });
+}
+
+/**
+ * Render projects from the data source
+ */
+function renderProjects() {
+  const container = document.getElementById('projects-list');
+  if (!container) return;
+  
+  const template = document.getElementById('project-template');
+  if (!template) return;
+  
+  projects.forEach(project => {
+    const clone = document.importNode(template.content, true);
+    
+    const link = clone.querySelector('a');
+    link.href = project.url;
+    link.textContent = project.title;
+    
+    container.appendChild(clone);
+  });
+}
+
+/**
+ * Render publications from the data source
+ */
+function renderPublications() {
+  const container = document.getElementById('publications-list');
+  if (!container) return;
+  
+  const template = document.getElementById('publication-template');
+  if (!template) return;
+  
+  publications.forEach(pub => {
+    const clone = document.importNode(template.content, true);
+    
+    const link = clone.querySelector('.publication-link');
+    link.href = pub.url;
+    link.textContent = pub.title;
+    
+    clone.querySelector('.publication-meta').textContent = pub.meta;
+    
+    container.appendChild(clone);
+  });
+}
+
+/**
+ * Render papers from the data source
+ */
+function renderPapers() {
+  const container = document.getElementById('papers-list');
+  if (!container) return;
+  
+  papers.forEach(paper => {
+    const paperDiv = document.createElement('div');
+    paperDiv.className = 'paper-item';
+    
+    const title = document.createElement('h4');
+    title.textContent = paper.title;
+    
+    const meta = document.createElement('p');
+    meta.className = 'paper-meta';
+    meta.textContent = paper.meta;
+    
+    const desc = document.createElement('p');
+    desc.textContent = paper.description;
+    
+    paperDiv.appendChild(title);
+    paperDiv.appendChild(meta);
+    paperDiv.appendChild(desc);
+    
+    container.appendChild(paperDiv);
+  });
+}
+
+/**
+ * Render blogs from the data source
+ */
+function renderBlogs() {
+  const container = document.getElementById('blog-list');
+  if (!container) return;
+  
+  blogs.forEach(blog => {
+    const blogDiv = document.createElement('div');
+    blogDiv.className = 'blog-item';
+    
+    const title = document.createElement('h4');
+    title.textContent = blog.title;
+    
+    const meta = document.createElement('div');
+    meta.className = 'blog-meta';
+    meta.textContent = blog.meta;
+    
+    const desc = document.createElement('p');
+    desc.textContent = blog.description;
+    
+    blogDiv.appendChild(title);
+    blogDiv.appendChild(meta);
+    blogDiv.appendChild(desc);
+    
+    container.appendChild(blogDiv);
+  });
+}
+
+/**
+ * Render social links in either full (icon+text) or text-only format
+ * @param {string} containerId - ID of the container element
+ * @param {boolean} textOnly - Whether to render text-only links (for footer)
+ */
+function renderSocialLinks(containerId, textOnly = false) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  const template = textOnly ? null : document.getElementById('social-link-template');
+  
+  socialLinks.forEach(link => {
+    if (textOnly) {
+      // Simple text link for footer
+      const a = document.createElement('a');
+      a.href = link.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = link.platform;
+      container.appendChild(a);
+    } else if (template) {
+      // Icon link for main content
+      const clone = document.importNode(template.content, true);
+      
+      const a = clone.querySelector('a');
+      a.href = link.url;
+      a.setAttribute('aria-label', link.platform);
+      
+      const icon = clone.querySelector('use');
+      icon.setAttribute('xlink:href', link.icon);
+      
+      const text = clone.querySelector('.link-text');
+      text.textContent = link.username;
+      
+      container.appendChild(clone);
+    }
+  });
 } 

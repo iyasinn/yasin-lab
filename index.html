@@ -42,6 +42,36 @@
             <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
         </symbol>
     </svg>
+    
+    <!-- Templates -->
+    <template id="experience-template">
+        <div class="experience-item">
+            <div class="company-name"></div>
+            <h3>
+                <span class="position"></span>
+                <span class="experience-date"></span>
+            </h3>
+            <p class="description"></p>
+        </div>
+    </template>
+    
+    <template id="publication-template">
+        <li>
+            <a href="#" class="publication-link"></a>
+            <div class="publication-meta"></div>
+        </li>
+    </template>
+    
+    <template id="social-link-template">
+        <a target="_blank" rel="noopener" aria-label="">
+            <svg class="icon"><use></use></svg>
+            <span class="link-text"></span>
+        </a>
+    </template>
+    
+    <template id="project-template">
+        <li><a href="#"></a></li>
+    </template>
 </head>
 <body>
     <header>
@@ -87,55 +117,14 @@
                     </div>
                 </div>
                 
-                <div class="work-experience">
-                    <div class="experience-item">
-                        <div class="company-name">
-                            Meta
-                            <span class="company-logo">
-                                <img src="assets/MetaLogo.webp" alt="Meta Logo" class="company-logo-img">
-                            </span>
-                        </div>
-                        <h3>
-                            Software Engineering Intern
-                            <span class="experience-date">January 2025 - Present</span>
-                        </h3>
-                        <p>Thrilled to be joining <span class="highlight">Meta's engineering team</span> as an incoming intern! I'll be diving into platform infrastructure challenges and helping build technology that connects billions of people worldwide.</p>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="company-name">Courier Health</div>
-                        <h3>
-                            Software Engineering Intern
-                            <span class="experience-date">May 2024 - September 2024</span>
-                        </h3>
-                        <p>At Courier Health, I worked on <span class="highlight">Platform Engineering</span> to help reinvent the biopharma-patient experience. I improved <span class="highlight">ETL pipelines</span> processing <span class="highlight">100,000+ files</span> and built an Ingest Dashboard that enhanced healthcare data quality.</p>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="company-name">Bluecross Blue Shield Michigan</div>
-                        <h3>
-                            Software Engineering Intern
-                            <span class="experience-date">June 2023 - August 2023</span>
-                        </h3>
-                        <p>At BCBS, I built a system that centralized critical resources for internal teams. My favorite project was creating a system for automated training progress tracking. I also developed a workflow for cross-team project coordination.</p>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="company-name">RediMinds</div>
-                        <h3>
-                            Software Engineering Intern
-                            <span class="experience-date">June 2022 - January 2023</span>
-                        </h3>
-                        <p>For my first internship at RediMinds, I pitched and built a <span class="highlight">VR diagnosis application</span> that secured funding. I created a Python pipeline for CT scan processing that significantly improved efficiency.</p>
-                    </div>
+                <div id="work-experience" class="work-experience">
+                    <!-- Populated via JavaScript -->
                 </div>
                 
                 <h3 class="subsection-title">Projects</h3>
                 <div class="work-links">
-                    <ul>
-                        <li><a href="#">Project 1: Short name or title of the project</a></li>
-                        <li><a href="#">Project 2: Brief descriptive title</a></li>
-                        <li><a href="#">Technical Skills: Programming, Systems, Mathematics</a></li>
+                    <ul id="projects-list">
+                        <!-- Populated via JavaScript -->
                     </ul>
                 </div>
             </div>
@@ -149,23 +138,15 @@
                 <div class="research-grid">
                     <div class="papers-container">
                         <h3 class="subsection-title">Whitepapers</h3>
-                        <div class="papers-list">
-                            <div class="paper-item">
-                                <h4>Upcoming whitepapers will appear here</h4>
-                                <p class="paper-meta">Research updates will be linked as they become available</p>
-                                <p>This section will host technical whitepapers as they're completed.</p>
-                            </div>
+                        <div id="papers-list" class="papers-list">
+                            <!-- Populated via JavaScript -->
                         </div>
                     </div>
                     
                     <div class="blogs-container">
                         <h3 class="subsection-title">Blog</h3>
-                        <div class="blog-list">
-                            <div class="blog-item">
-                                <h4>Upcoming blog posts will appear here</h4>
-                                <div class="blog-meta">Date information will display here</div>
-                                <p>This section will contain short-form writing on topics related to my research interests.</p>
-                            </div>
+                        <div id="blog-list" class="blog-list">
+                            <!-- Populated via JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -178,19 +159,8 @@
                 <p class="section-intro">My research and academic publications.</p>
                 
                 <div class="publications-container">
-                    <ul class="publications-list">
-                        <li>
-                            <a href="#" class="publication-link">Publication Title</a>
-                            <div class="publication-meta">Journal or Conference Name, Year</div>
-                        </li>
-                        <li>
-                            <a href="#" class="publication-link">Another Publication</a>
-                            <div class="publication-meta">Journal or Conference Name, Year</div>
-                        </li>
-                        <li>
-                            <a href="#" class="publication-link">Third Academic Paper</a>
-                            <div class="publication-meta">Journal or Conference Name, Year</div>
-                        </li>
+                    <ul id="publications-list" class="publications-list">
+                        <!-- Populated via JavaScript -->
                     </ul>
                 </div>
             </div>
@@ -205,27 +175,16 @@
                     <div class="contact-info">
                         <div class="contact-method">
                             <span>Email:</span>
-                            <span style="font-weight: normal;">iyasin[at]umich[dot]edu</span>
+                            <span class="contact-value">iyasin[at]umich[dot]edu</span>
                         </div>
                         <div class="contact-method">
                             <span>Academic:</span>
-                            <a href="#">University of Michigan</a>
+                            <a href="#" class="contact-value">University of Michigan</a>
                         </div>
                     </div>
                     
-                    <div class="social-links">
-                        <a href="https://github.com/iyasinn" target="_blank" rel="noopener" aria-label="GitHub">
-                            <svg class="icon"><use xlink:href="#icon-github"></use></svg>
-                            @iyasinn
-                        </a>
-                        <a href="https://twitter.com/ihsaanyasin" target="_blank" rel="noopener" aria-label="Twitter">
-                            <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
-                            @ihsaanyasin
-                        </a>
-                        <a href="https://linkedin.com/in/ihsaanyasin" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <svg class="icon"><use xlink:href="#icon-linkedin"></use></svg>
-                            @ihsaanyasin
-                        </a>
+                    <div id="social-links" class="social-links">
+                        <!-- Populated via JavaScript -->
                     </div>
                 </div>
             </div>
@@ -235,19 +194,18 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="social-links">
-                    <a href="https://github.com/iyasinn" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-                    <a href="https://twitter.com/ihsaanyasin" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
-                    <a href="https://linkedin.com/in/ihsaanyasin" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+                <div id="footer-social-links" class="social-links">
+                    <!-- Populated via JavaScript -->
                 </div>
                 <div class="copyright">
-                    &copy; <span id="current-year">2023</span> Ihsaan Yasin. All rights reserved.
+                    &copy; <span id="current-year"></span> Ihsaan Yasin. All rights reserved.
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Defer JavaScript loading for performance -->
+    <script src="data.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html> 
