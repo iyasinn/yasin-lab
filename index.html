@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ihsaan Yasin - Systems Thinker, Researcher, Builder">
-    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#002147">
+    
+    <title>Ihsaan Yasin</title>
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
@@ -19,9 +21,8 @@
     <!-- Resource Hints -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="colors.css" as="style">
-    <link rel="preload" href="script.js" as="script">
     
-    <title>Ihsaan Yasin</title>
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="colors.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="print.css" media="print">
@@ -64,11 +65,11 @@
                 <div class="home-content">
                     <h1>Ihsaan Yasin</h1>
                     <div class="social-handles">
-                        <a href="https://twitter.com/iyasinn" target="_blank">@iyasinn.x</a>
+                        <a href="https://twitter.com/iyasinn" target="_blank" rel="noopener">@iyasinn.x</a>
                         <span class="handle-separator">•</span>
-                        <a href="https://github.com/iyasinn" target="_blank">@iyasinn</a>
+                        <a href="https://github.com/iyasinn" target="_blank" rel="noopener">@iyasinn</a>
                         <span class="handle-separator">•</span>
-                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener">Google Scholar</a>
                     </div>
                     <div class="home-bio">
                         <p>Exploring efficient systems, performant computation, and mathematical thinking.</p>
@@ -166,16 +167,16 @@
                     </div>
                     
                     <div class="social-links">
-                        <a href="https://github.com/iyasinn" aria-label="GitHub">
-                            <svg class="icon"><use href="#icon-github"></use></svg>
+                        <a href="https://github.com/iyasinn" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg class="icon"><use xlink:href="#icon-github"></use></svg>
                             @iyasinn
                         </a>
-                        <a href="https://twitter.com/ihsaanyasin" aria-label="Twitter">
-                            <svg class="icon"><use href="#icon-twitter"></use></svg>
+                        <a href="https://twitter.com/ihsaanyasin" target="_blank" rel="noopener" aria-label="Twitter">
+                            <svg class="icon"><use xlink:href="#icon-twitter"></use></svg>
                             @ihsaanyasin
                         </a>
-                        <a href="https://linkedin.com/in/ihsaanyasin" aria-label="LinkedIn">
-                            <svg class="icon"><use href="#icon-linkedin"></use></svg>
+                        <a href="https://linkedin.com/in/ihsaanyasin" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg class="icon"><use xlink:href="#icon-linkedin"></use></svg>
                             @ihsaanyasin
                         </a>
                     </div>
@@ -188,9 +189,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="social-links">
-                    <a href="https://github.com/iyasinn" aria-label="GitHub">GitHub</a>
-                    <a href="https://twitter.com/ihsaanyasin" aria-label="Twitter">Twitter</a>
-                    <a href="https://linkedin.com/in/ihsaanyasin" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="https://github.com/iyasinn" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+                    <a href="https://twitter.com/ihsaanyasin" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a>
+                    <a href="https://linkedin.com/in/ihsaanyasin" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
                 </div>
                 <div class="copyright">
                     &copy; <span id="current-year">2023</span> Ihsaan Yasin. All rights reserved.
@@ -199,6 +200,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Defer JavaScript loading for performance -->
+    <script src="script.js" defer></script>
 </body>
 </html> 

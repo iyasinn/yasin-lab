@@ -4,8 +4,9 @@
  * Optimized for readability, authority, and scholarly presentation
  */
 
+/* Base Colors - Oxford-inspired palette */
 :root {
-    /* Base Colors - Oxford-inspired palette */
+    /* Primary palette */
     --oxford-blue: #002147;         /* Classic Oxford/Cambridge blue */
     --oxford-blue-light: #1c3f6e;   /* Lighter variation */
     --burgundy: #7D1935;            /* Traditional academic accent */

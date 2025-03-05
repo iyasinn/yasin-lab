@@ -103,6 +103,7 @@ a {
   color: var(--link-color);
   text-decoration: none;
   border-bottom: 1px solid transparent;  /* Underline on hover */
+  transition: border-color 0.2s ease;
 }
 
 a:hover, 
@@ -119,6 +120,7 @@ code {
   background-color: var(--code-bg);
   padding: 0.1em 0.3em;
   border-radius: 2px;
+  color: var(--code-color);
 }
 
 pre {
@@ -148,6 +150,7 @@ header {
   border-bottom: 2px solid var(--accent-color);
   padding: 0.6rem 0;
   color: white;
+  height: var(--header-height);
 }
 
 nav {
@@ -176,6 +179,7 @@ nav {
   position: relative;
   font-size: 0.95rem;
   transition: color 0.2s ease;
+  border-bottom: none;
 }
 
 .nav-links a.active {
@@ -184,6 +188,7 @@ nav {
 
 .nav-links a:hover {
   color: var(--accent-color);
+  border-bottom: none;
 }
 
 /* Sections */
@@ -332,6 +337,7 @@ section:last-of-type {
   color: var(--text-color);
   text-decoration: none;
   display: block;
+  border-bottom: none;
 }
 
 /* Research section - Side-by-side layout */
@@ -361,6 +367,7 @@ section:last-of-type {
   border: 1px solid var(--subtle-border);
   border-left: 3px solid var(--primary-color);
   box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .paper-item h4,
@@ -394,6 +401,7 @@ section:last-of-type {
   margin-top: 0.8rem;
   font-family: var(--font-sans);
   color: var(--link-color);
+  border-bottom: none;
 }
 
 /* Publications section - Simplified */
@@ -427,6 +435,7 @@ section:last-of-type {
   text-decoration: none;
   display: block;
   font-family: var(--font-serif);
+  border-bottom: none;
 }
 
 .publication-link:hover {
@@ -441,6 +450,7 @@ section:last-of-type {
   padding: 1.5rem;
   position: relative;
   box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  transition: box-shadow 0.2s ease;
 }
 
 .contact-container::before {
@@ -485,6 +495,8 @@ section:last-of-type {
   gap: 0.5rem;
   font-size: 0.95rem;
   font-family: var(--font-sans);
+  border-bottom: none;
+  transition: color 0.2s ease;
 }
 
 footer .social-links a {
@@ -561,6 +573,7 @@ blockquote {
   box-shadow: 0 2px 4px rgba(0,0,0,0.03);
   font-family: var(--font-serif);
   border-radius: 2px;
+  transition: box-shadow 0.2s ease;
 }
 
 /* Table of Contents */
@@ -608,6 +621,8 @@ blockquote {
   display: inline-block;
   color: var(--link-color);
   line-height: 1.4;
+  border-bottom: none;
+  transition: color 0.2s ease;
 }
 
 /* Code formatting */
@@ -693,8 +708,8 @@ blockquote {
 /* Remove all animations and transitions for users who prefer reduced motion */
 @media (prefers-reduced-motion) {
   * {
-    animation: none !important;
-    transition: none !important;
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
   }
 }
 
