@@ -1,53 +1,50 @@
 /**
  * Color system for Ihsaan Yasin's personal website
- * Optimized for accessibility and performance
+ * Minimalist academic style inspired by Andrej Karpathy's design philosophy
+ * Optimized for readability, simplicity, and performance
  */
 
 :root {
-    /* Base Colors - with fallbacks for older browsers */
-    --color-black: #000000;
+    /* Base Colors - Minimalist palette */
+    --color-black: #222222;
     --color-white: #ffffff;
-    --color-blue-600: #0066cc;
-    --color-blue-700: #0052a3;
+    --color-blue: #0077cc;
+    --color-blue-dark: #0366d6;
     --color-gray-100: #fafafa;
     --color-gray-200: #f5f5f5;
-    --color-gray-300: #eeeeee;
-    --color-gray-700: #757575;
-    --color-gray-900: #212121;
+    --color-gray-300: #e0e0e0;
+    --color-gray-700: #666666;
+    --color-gray-900: #222222;
 
     /* Semantic Colors */
-    --primary-color: var(--color-black);
-    --primary-dark: var(--color-black);
-    --primary-light: #333333;
-
-    /* Accent Color - with improved contrast ratio */
-    --accent-color: var(--color-blue-600);
-    --accent-dark: var(--color-blue-700);
-
-    /* Background Colors */
-    --bg-primary: var(--color-gray-100);
-    --bg-secondary: var(--color-gray-200);
+    --primary-color: var(--color-blue);
+    --text-color: var(--color-black);
+    --background-color: var(--color-gray-100);
+    --subtle-border: var(--color-gray-300);
+    --card-bg: var(--color-white);
+    
+    /* Links Color */
+    --link-color: var(--color-blue);
+    --link-hover: var(--color-blue-dark);
     
     /* Text Colors - with WCAG AA compliance */
     --text-primary: var(--color-gray-900);
     --text-secondary: var(--color-gray-700);
     --text-light: var(--color-white);
     
+    /* Code highlights */
+    --code-bg: #f0f0f0;
+    --code-color: #333;
+    
     /* Status Colors - with improved contrast */
     --success-color: #2e7d32; /* WCAG AA compliant */
     --warning-color: #e65100; /* Improved from previous orange */
     --error-color: #c62828; /* Darker red for better contrast */
-    --info-color: var(--color-blue-600);
+    --info-color: var(--color-blue);
 
-    /* Secondary Colors - Subtle Gray */
-    --secondary-color: #666666;
-    --secondary-dark: #444444;
-    --secondary-light: #888888;
-
-    /* Gradients - Minimal */
-    --gradient-primary: linear-gradient(135deg, var(--neutral-100) 0%, var(--neutral-200) 100%);
-    --gradient-secondary: linear-gradient(135deg, var(--neutral-200) 0%, var(--neutral-300) 100%);
-    --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+    /* Typography highlights */
+    --quote-color: #555;
+    --metadata-color: #666;
 }
 
 /* Dark mode support - for future implementation */
@@ -55,10 +52,30 @@
     :root {
         /* Dark mode colors - commented out until fully implemented */
         /*
-        --bg-primary: #121212;
-        --bg-secondary: #1e1e1e;
-        --text-primary: #e0e0e0;
-        --text-secondary: #a0a0a0;
+        --color-black: #e0e0e0;
+        --color-white: #121212;
+        --color-blue: #58a6ff;
+        --color-blue-dark: #79b8ff;
+        --color-gray-100: #121212;
+        --color-gray-200: #1e1e1e;
+        --color-gray-300: #333333;
+        --color-gray-700: #aaaaaa;
+        --color-gray-900: #e0e0e0;
+
+        --background-color: var(--color-gray-100);
+        --text-color: var(--color-black);
+        --subtle-border: var(--color-gray-300);
+        --card-bg: #1a1a1a;
+        
+        --link-color: var(--color-blue);
+        --link-hover: var(--color-blue-dark);
+        
+        --text-primary: var(--color-gray-900);
+        --text-secondary: var(--color-gray-700);
+        --text-light: var(--color-white);
+        
+        --code-bg: #2a2a2a;
+        --code-color: #e0e0e0;
         */
     }
 }
@@ -66,11 +83,18 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
     :root {
-        --primary-color: #000000;
-        --accent-color: #0000ee;
-        --bg-primary: #ffffff;
-        --bg-secondary: #f0f0f0;
+        --primary-color: #0000ee;
+        --text-color: #000000;
+        --background-color: #ffffff;
+        --subtle-border: #666666;
+        --card-bg: #ffffff;
+        
+        --link-color: #0000ee;
+        --link-hover: #0000ee;
         --text-primary: #000000;
-        --text-secondary: #202020;
+        --text-secondary: #000000;
+        
+        --code-bg: #ffffff;
+        --code-color: #000000;
     }
 } 
