@@ -1,0 +1,78 @@
+/* Print Styles */
+@media print {
+  /* Reset */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Layout */
+  body {
+    margin: 0;
+    padding: 0.5cm;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  /* Hide unnecessary elements */
+  nav, 
+  .social-links svg,
+  .project-link span {
+    display: none !important;
+  }
+  
+  /* Ensure content is visible */
+  #content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Typography */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+  
+  /* Don't show links for images or javascript/internal links */
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  
+  /* Page breaks */
+  section {
+    page-break-inside: avoid;
+  }
+  
+  /* Project cards */
+  .project {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 2em;
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+  }
+} 

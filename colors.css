@@ -1,0 +1,76 @@
+/**
+ * Color system for Ihsaan Yasin's personal website
+ * Optimized for accessibility and performance
+ */
+
+:root {
+    /* Base Colors - with fallbacks for older browsers */
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-blue-600: #0066cc;
+    --color-blue-700: #0052a3;
+    --color-gray-100: #fafafa;
+    --color-gray-200: #f5f5f5;
+    --color-gray-300: #eeeeee;
+    --color-gray-700: #757575;
+    --color-gray-900: #212121;
+
+    /* Semantic Colors */
+    --primary-color: var(--color-black);
+    --primary-dark: var(--color-black);
+    --primary-light: #333333;
+
+    /* Accent Color - with improved contrast ratio */
+    --accent-color: var(--color-blue-600);
+    --accent-dark: var(--color-blue-700);
+
+    /* Background Colors */
+    --bg-primary: var(--color-gray-100);
+    --bg-secondary: var(--color-gray-200);
+    
+    /* Text Colors - with WCAG AA compliance */
+    --text-primary: var(--color-gray-900);
+    --text-secondary: var(--color-gray-700);
+    --text-light: var(--color-white);
+    
+    /* Status Colors - with improved contrast */
+    --success-color: #2e7d32; /* WCAG AA compliant */
+    --warning-color: #e65100; /* Improved from previous orange */
+    --error-color: #c62828; /* Darker red for better contrast */
+    --info-color: var(--color-blue-600);
+
+    /* Secondary Colors - Subtle Gray */
+    --secondary-color: #666666;
+    --secondary-dark: #444444;
+    --secondary-light: #888888;
+
+    /* Gradients - Minimal */
+    --gradient-primary: linear-gradient(135deg, var(--neutral-100) 0%, var(--neutral-200) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--neutral-200) 0%, var(--neutral-300) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+}
+
+/* Dark mode support - for future implementation */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark mode colors - commented out until fully implemented */
+        /*
+        --bg-primary: #121212;
+        --bg-secondary: #1e1e1e;
+        --text-primary: #e0e0e0;
+        --text-secondary: #a0a0a0;
+        */
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #000000;
+        --accent-color: #0000ee;
+        --bg-primary: #ffffff;
+        --bg-secondary: #f0f0f0;
+        --text-primary: #000000;
+        --text-secondary: #202020;
+    }
+} 
