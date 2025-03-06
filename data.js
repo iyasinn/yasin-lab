@@ -19,6 +19,12 @@ const experiences = [
         date: "May 2024 - September 2024",
         description: "At Courier Health, I worked on <span class=\"highlight\">Platform Engineering</span> to help reinvent the biopharma-patient experience. I improved <span class=\"highlight\">ETL pipelines</span> processing <span class=\"highlight\">100,000+ files</span> and built an Ingest Dashboard that enhanced healthcare data quality."
     },
+  {
+    company: "V1",
+    position: "Head of Engineering",
+    date: "January 2024 - Present",
+    description: "Leading all internal engineering for the largest builder community in the west."
+  },
     // {
     //     company: "Bluecross Blue Shield Michigan",
     //     position: "Software Engineering Intern",
