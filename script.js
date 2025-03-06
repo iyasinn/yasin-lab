@@ -299,6 +299,9 @@ function renderProjects() {
     const link = clone.querySelector('a');
     link.href = project.url;
     link.textContent = project.title;
+
+    const description = clone.querySelector("p");
+    description.textContent = project.description;
     
     container.appendChild(clone);
   });

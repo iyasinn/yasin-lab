@@ -35,9 +35,21 @@ const experiences = [
 
 // Projects data
 const projects = [
-    { title: "Project 1: Short name or title of the project", url: "#" },
-    { title: "Project 2: Brief descriptive title", url: "#" },
-    { title: "Technical Skills: Programming, Systems, Mathematics", url: "#" }
+    { 
+        title: "micrograd-plusplus", 
+        url: "https://github.com/iyasinn/micrograd-plusplus",
+        description: "A C++ implementation of micrograd by Andrej Karpathy, focusing on simplicity and educational value."
+    },
+    { 
+        title: "ComputeLab", 
+        url: "https://github.com/iyasinn/ComputeLab",
+        description: "A C++ project focused on computational algorithms and data processing."
+    },
+    { 
+        title: "iwg-form", 
+        url: "https://github.com/iyasinn/iwg-form",
+        description: "A TypeScript project for creating dynamic and interactive web forms."
+    }
 ];
 
 // Publications data
