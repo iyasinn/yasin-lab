@@ -7,8 +7,8 @@
 const experiences = [
     {
         company: "Meta",
-        logo: "assets/MetaLogo.webp",
-        logoAlt: "Meta Logo",
+        // logo: "assets/MetaLogo.webp",
+        // logoAlt: "",
         position: "Software Engineering Intern",
         date: "January 2025 - Present",
         description: "Thrilled to be joining <span class=\"highlight\">Meta's engineering team</span> as an incoming intern! I'll be diving into platform infrastructure challenges and helping build technology that connects billions of people worldwide."
@@ -19,12 +19,12 @@ const experiences = [
         date: "May 2024 - September 2024",
         description: "At Courier Health, I worked on <span class=\"highlight\">Platform Engineering</span> to help reinvent the biopharma-patient experience. I improved <span class=\"highlight\">ETL pipelines</span> processing <span class=\"highlight\">100,000+ files</span> and built an Ingest Dashboard that enhanced healthcare data quality."
     },
-    {
-        company: "Bluecross Blue Shield Michigan",
-        position: "Software Engineering Intern",
-        date: "June 2023 - August 2023",
-        description: "At BCBS, I built a system that centralized critical resources for internal teams. My favorite project was creating a system for automated training progress tracking. I also developed a workflow for cross-team project coordination."
-    },
+    // {
+    //     company: "Bluecross Blue Shield Michigan",
+    //     position: "Software Engineering Intern",
+    //     date: "June 2023 - August 2023",
+    //     description: "At BCBS, I built a system that centralized critical resources for internal teams. My favorite project was creating a system for automated training progress tracking. I also developed a workflow for cross-team project coordination."
+    // },
     {
         company: "RediMinds",
         position: "Software Engineering Intern",

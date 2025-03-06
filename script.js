@@ -193,94 +193,94 @@ function throttle(func, limit) {
 /**
  * Render experience items from the data source
  */
-// function renderExperiences() {
-//   const container = document.getElementById('work-experience');
-//   if (!container) return;
-  
-//   const template = document.getElementById('experience-template');
-//   if (!template) return;
-  
-//   experiences.forEach(exp => {
-//     const clone = document.importNode(template.content, true);
-    
-//     const companyElement = clone.querySelector('.company-name');
-//     companyElement.textContent = exp.company;
-    
-//     // Add logo if available
-//     if (exp.logo) {
-//       const logoSpan = document.createElement('span');
-//       logoSpan.className = 'company-logo';
-      
-//       const logoImg = document.createElement('img');
-//       logoImg.src = exp.logo;
-//       logoImg.alt = exp.logoAlt || `${exp.company} Logo`;
-//       logoImg.className = 'company-logo-img';
-//       logoImg.loading = 'lazy'; // Add lazy loading for better performance
-      
-//       logoSpan.appendChild(logoImg);
-//       companyElement.appendChild(logoSpan);
-//     }
-    
-//     clone.querySelector('.position').textContent = exp.position;
-//     clone.querySelector('.experience-date').textContent = exp.date;
-//     clone.querySelector('.description').innerHTML = exp.description;
-    
-//     container.appendChild(clone);
-//   });
-// }
 function renderExperiences() {
   const container = document.getElementById('work-experience');
   if (!container) return;
-
+  
   const template = document.getElementById('experience-template');
   if (!template) return;
-
-  // Clear previous content (useful if re-rendering)
-  container.innerHTML = '';
-
-  // Use DocumentFragment for better performance
-  const fragment = document.createDocumentFragment();
-
-  if (!experiences || experiences.length === 0) {
-      const noExperienceMessage = document.createElement('p');
-      noExperienceMessage.textContent = "No work experience available.";
-      container.appendChild(noExperienceMessage);
-      return;
-  }
-
+  
   experiences.forEach(exp => {
-      const clone = document.importNode(template.content, true);
-
-      const companyElement = clone.querySelector('.company-name');
-      companyElement.textContent = exp.company;
-
-      // Add logo if available
-      if (exp.logo) {
-          const logoSpan = document.createElement('span');
-          logoSpan.className = 'company-logo';
-
-          const logoImg = document.createElement('img');
-          logoImg.src = exp.logo;
-          logoImg.alt = exp.logoAlt || `${exp.company} Logo`;
-          logoImg.className = 'company-logo-img';
-          logoImg.loading = 'lazy'; // Lazy load for better performance
-
-          logoSpan.appendChild(logoImg);
-          companyElement.appendChild(logoSpan);
-      }
-
-      clone.querySelector('.position').textContent = exp.position;
-      clone.querySelector('.experience-date').textContent = exp.date;
-
-      // Sanitize description before inserting (Prevent XSS)
-      const descriptionElement = clone.querySelector('.description');
-      descriptionElement.textContent = exp.description; // Prevents XSS
-
-      fragment.appendChild(clone);
+    const clone = document.importNode(template.content, true);
+    
+    const companyElement = clone.querySelector('.company-name');
+    companyElement.textContent = exp.company;
+    
+    // Add logo if available
+    if (exp.logo) {
+      const logoSpan = document.createElement('span');
+      logoSpan.className = 'company-logo';
+      
+      const logoImg = document.createElement('img');
+      logoImg.src = exp.logo;
+      logoImg.alt = exp.logoAlt || `${exp.company} Logo`;
+      logoImg.className = 'company-logo-img';
+      logoImg.loading = 'lazy'; // Add lazy loading for better performance
+      
+      logoSpan.appendChild(logoImg);
+      companyElement.appendChild(logoSpan);
+    }
+    
+    clone.querySelector('.position').textContent = exp.position;
+    clone.querySelector('.experience-date').textContent = exp.date;
+    clone.querySelector('.description').innerHTML = exp.description;
+    
+    container.appendChild(clone);
   });
-
-  container.appendChild(fragment); // Append all at once
 }
+// function renderExperiences() {
+//   const container = document.getElementById('work-experience');
+//   if (!container) return;
+
+//   const template = document.getElementById('experience-template');
+//   if (!template) return;
+
+//   // Clear previous content (useful if re-rendering)
+//   container.innerHTML = '';
+
+//   // Use DocumentFragment for better performance
+//   const fragment = document.createDocumentFragment();
+
+//   if (!experiences || experiences.length === 0) {
+//       const noExperienceMessage = document.createElement('p');
+//       noExperienceMessage.textContent = "No work experience available.";
+//       container.appendChild(noExperienceMessage);
+//       return;
+//   }
+
+//   experiences.forEach(exp => {
+//       const clone = document.importNode(template.content, true);
+
+//       const companyElement = clone.querySelector('.company-name');
+//       companyElement.textContent = exp.company;
+
+//       // Add logo if available
+//       if (exp.logo) {
+//           const logoSpan = document.createElement('span');
+//           logoSpan.className = 'company-logo';
+
+//           const logoImg = document.createElement('img');
+//           logoImg.src = exp.logo;
+//           logoImg.alt = exp.logoAlt || `${exp.company} Logo`;
+//           logoImg.className = 'company-logo-img';
+//           logoImg.loading = 'lazy'; // Lazy load for better performance
+
+//           logoSpan.appendChild(logoImg);
+//           companyElement.appendChild(logoSpan);
+//       }
+
+//       clone.querySelector('.position').textContent = exp.position;
+//       clone.querySelector('.experience-date').textContent = exp.date;
+
+//       // Sanitize description before inserting (Prevent XSS)
+//       const descriptionElement = clone.querySelector('.description');
+//       descriptionElement.textContent = exp.description; // Prevents XSS
+
+//       fragment.appendChild(clone);
+//   });
+
+//   container.appendChild(fragment); // Append all at once
+// }
 
 
 /**
